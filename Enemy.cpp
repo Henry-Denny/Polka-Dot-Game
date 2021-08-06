@@ -80,9 +80,6 @@ bool Enemy::isWithinBounds(sf::Vector2u l_winSize)
     return false;
 }
 
-float Enemy::GetSize() { return m_shape.getRadius(); }
-sf::Vector2f Enemy::GetPosition() { return m_shape.getPosition(); }
-
 sf::CircleShape* Enemy::GetShape()
 {
     return &m_shape;

@@ -30,9 +30,6 @@ void Player::Eat()
     m_shape.setOrigin(GetSize(), GetSize());
 }
 
-sf::Vector2f Player::GetPosition() { return m_shape.getPosition(); }
-sf::Vector2f Player::GetOrigin() { return m_shape.getOrigin(); }
-float Player::GetSize() { return m_shape.getRadius(); }
 int Player::GetScore() { return m_score; }
 
 sf::CircleShape* Player::GetShape() { return &m_shape; }

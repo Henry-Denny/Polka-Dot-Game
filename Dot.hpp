@@ -10,10 +10,10 @@ public:
     Dot();
     ~Dot();
 
-protected:
-    virtual void Move(const sf::RenderWindow &l_window) = 0;
-    virtual void Move(float deltaTime) = 0;
+    sf::Vector2f GetPosition();
+    float GetSize();
 
+protected:
     sf::CircleShape m_shape;
 };
 

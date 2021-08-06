@@ -3,10 +3,12 @@
 
 #include <SFML\Graphics.hpp>
 
+#include "Dot.hpp"
+
 #define STARTING_SIZE 10
 #define SIZE_STEP 2
 
-class Player
+class Player : public Dot
 {
 public:
     Player();
@@ -16,16 +18,11 @@ public:
     void Move(const sf::RenderWindow &l_window);
     void Eat();
 
-    sf::Vector2f GetPosition();
-    sf::Vector2f GetOrigin();
-    float GetSize();
     int GetScore();
     sf::CircleShape* GetShape();
 
 private:
     int m_score;
-
-    sf::CircleShape m_shape;
 };
 
 #endif
