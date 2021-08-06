@@ -79,8 +79,3 @@ bool Enemy::isWithinBounds(sf::Vector2u l_winSize)
     }
     return false;
 }
-
-sf::CircleShape* Enemy::GetShape()
-{
-    return &m_shape;
-}

@@ -10,6 +10,7 @@ public:
     Dot();
     ~Dot();
 
+    void Render(sf::RenderWindow *l_window);
     sf::Vector2f GetPosition();
     float GetSize();
 

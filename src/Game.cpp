@@ -56,14 +56,14 @@ void Game::Render()
     // Draw dots
     for (auto itr = m_enemies.begin(); itr != m_enemies.end(); ++itr)
     {
-        m_window.Draw(*itr->GetShape());
+        itr->Render(m_window.GetRenderWindow());
     }
     
     // Draw player
-    m_window.Draw(*m_player.GetShape());
+    m_player.Render(m_window.GetRenderWindow());
 
     // Draw score
-    m_window.Draw(*m_textbox.GetText());
+    m_textbox.Render(m_window.GetRenderWindow());
     
     m_window.EndDraw();
 }

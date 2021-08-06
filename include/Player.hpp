@@ -19,7 +19,6 @@ public:
     void Eat();
 
     int GetScore();
-    sf::CircleShape* GetShape();
 
 private:
     int m_score;

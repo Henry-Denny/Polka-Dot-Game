@@ -31,5 +31,3 @@ void Player::Eat()
 }
 
 int Player::GetScore() { return m_score; }
-
-sf::CircleShape* Player::GetShape() { return &m_shape; }

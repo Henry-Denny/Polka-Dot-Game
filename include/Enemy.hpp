@@ -28,8 +28,6 @@ public:
 
     bool isWithinBounds(sf::Vector2u l_winSize);
 
-    sf::CircleShape* GetShape();
-
 private:
     sf::Vector2f m_increment;
     float m_speed;

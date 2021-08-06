@@ -17,7 +17,4 @@ void Textbox::UpdateTextbox(int l_score)
     m_textBox.setString(std::to_string(l_score));
 }
 
-sf::Text* Textbox::GetText()
-{
-    return &m_textBox;
-}
+void Textbox::Render(sf::RenderWindow *l_window) { l_window->draw(m_textBox); }

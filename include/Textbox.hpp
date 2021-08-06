@@ -12,8 +12,7 @@ public:
     ~Textbox();
 
     void UpdateTextbox(int l_score);
-
-    sf::Text* GetText();
+    void Render(sf::RenderWindow *l_window);
 
 private:
     sf::Font m_font;
