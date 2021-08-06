@@ -3,6 +3,7 @@
 
 #include <SFML\Graphics.hpp>
 
+// Base class for Player and Enemy
 class Dot
 {
 public:
