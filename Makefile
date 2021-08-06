@@ -1,2 +1,2 @@
-Polka_Dot_Game.exe : *.cpp *.hpp
-	g++ -o Polka_Dot_Game.exe *.cpp *.dll -I ./include
+Polka_Dot_Game.exe : ./src/*.cpp ./include/*.hpp
+	g++ -o ./bin/Polka_Dot_Game.exe ./src/*.cpp ./bin/*.dll -I ./include

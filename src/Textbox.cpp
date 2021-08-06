@@ -2,7 +2,7 @@
 
 Textbox::Textbox()
 {
-    m_font.loadFromFile("otomanopee.ttf");
+    m_font.loadFromFile("./res/otomanopee.ttf");
     m_textBox.setFont(m_font);
     m_textBox.setCharacterSize(100);
     m_textBox.setPosition(15, 3);
