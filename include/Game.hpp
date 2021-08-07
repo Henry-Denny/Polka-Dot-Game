@@ -35,6 +35,7 @@ public:
     void Render();
     void RestartClock();
 
+    void SetMouseVisible(bool l_visible);
     void ToggleMouseVisibility();
 
     Enemy CreateDot();

@@ -15,7 +15,7 @@ void Game::Setup()
 
 void Game::Reset()
 {
-    ToggleMouseVisibility();
+    SetMouseVisible(false);
     m_player = Player(m_window.GetSize());
     m_textbox.UpdateTextbox(m_player.GetScore());
     ResetDots();
@@ -128,10 +128,16 @@ void Game::CheckCollisions()
             else
             {
                 m_player.SetAlive(false);
-                ToggleMouseVisibility();
+                SetMouseVisible(true);
             }
         }
     }
+}
+
+void Game::SetMouseVisible(bool l_visible)
+{
+    m_mouseVisible = l_visible;
+    m_window.GetRenderWindow()->setMouseCursorVisible(l_visible);
 }
 
 void Game::ToggleMouseVisibility()
