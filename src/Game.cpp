@@ -9,13 +9,13 @@ Game::~Game() {}
 
 void Game::Setup()
 {
-    ToggleMouseVisibility();
     sf::Mouse::setPosition(sf::Vector2i(m_window.GetSize().x / 2.0f, m_window.GetSize().y / 2.0f), *m_window.GetRenderWindow());
     Reset();
 }
 
 void Game::Reset()
 {
+    ToggleMouseVisibility();
     m_player = Player(m_window.GetSize());
     m_textbox.UpdateTextbox(m_player.GetScore());
     ResetDots();
@@ -36,6 +36,10 @@ void Game::HandleInput()
                 if (event.key.code == sf::Keyboard::Escape)
                     ToggleMouseVisibility();
                 break;
+            case (sf::Event::MouseButtonPressed):
+                if (event.mouseButton.button == sf::Mouse::Left)
+                    Reset();
+                break;
             default:
                 break;
         }
@@ -45,8 +49,11 @@ void Game::HandleInput()
 void Game::Update()
 {
     MoveDots();
-    m_player.Move(*m_window.GetRenderWindow());
-    CheckCollisions();
+    if (m_player.IsAlive())
+    {
+        m_player.Move(*m_window.GetRenderWindow());
+        CheckCollisions();
+    }
 }
 
 void Game::Render()
@@ -60,7 +67,8 @@ void Game::Render()
     }
     
     // Draw player
-    m_player.Render(m_window.GetRenderWindow());
+    if (m_player.IsAlive())
+        m_player.Render(m_window.GetRenderWindow());
 
     // Draw score
     m_textbox.Render(m_window.GetRenderWindow());
@@ -116,7 +124,8 @@ void Game::CheckCollisions()
             }
             else
             {
-                Reset();
+                m_player.SetAlive(false);
+                ToggleMouseVisibility();
             }
         }
     }

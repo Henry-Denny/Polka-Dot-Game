@@ -2,7 +2,7 @@
 
 Player::Player() {}
 
-Player::Player(sf::Vector2u l_winSize) : m_score(0)
+Player::Player(sf::Vector2u l_winSize) : m_score(0), m_alive(true)
 {
     m_shape.setRadius(STARTING_SIZE);
     m_shape.setOrigin(m_shape.getRadius(), m_shape.getRadius());
@@ -30,4 +30,6 @@ void Player::Eat()
     m_shape.setOrigin(GetSize(), GetSize());
 }
 
+void Player::SetAlive(bool l_alive) { m_alive = l_alive; }
 int Player::GetScore() { return m_score; }
+int Player::IsAlive() { return m_alive; }
