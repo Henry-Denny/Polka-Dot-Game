@@ -71,7 +71,10 @@ void Game::Render()
         m_player.Render(m_window.GetRenderWindow());
 
     // Draw score
-    m_textbox.Render(m_window.GetRenderWindow());
+    if (m_player.IsAlive())
+        m_textbox.RenderScore(m_window.GetRenderWindow());
+    else
+        m_textbox.RenderDeathScreen(m_window.GetRenderWindow(), m_player.GetScore());
     
     m_window.EndDraw();
 }
